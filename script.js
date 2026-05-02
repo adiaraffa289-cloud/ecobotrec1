@@ -394,22 +394,17 @@ class AuthManager {
         }, 1000);
     }
     
-    static checkAuth() {
-        const currentUser = StorageManager.getCurrentUser();
-        const currentPage = window.location.pathname;
-        
-        if (!currentUser && !currentPage.includes('login.html')) {
-            window.location.href = 'login.html';
-            return false;
-        }
-        
-        if (currentUser && currentPage.includes('login.html')) {
-            window.location.href = 'index.html';
-            return false;
-        }
-        
-        return true;
-    }
+   static checkAuth() {
+    const currentUser = StorageManager.getCurrentUser();
+    const currentPage = window.location.pathname;
+
+    // Hapus atau beri tanda // di depan baris di bawah ini:
+    // if (!currentUser && !currentPage.includes('login.html')) {
+    //    window.location.href = 'login.html';
+    //    return false;
+    // }
+    return true;
+   }
 }
 
 // ==========================================================================
